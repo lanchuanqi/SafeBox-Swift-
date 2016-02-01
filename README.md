@@ -1,1 +1,3 @@
 # SafeBox-Swift-
+
+This project is to lock you own photos and notes. You can have as many username and password set as you want. But the photos and notes are not shared in different account. For example if you add one photo to your first account and you created another account, the photo will not show on your second account. The photos can be added through taking a picture or from your local Photo, and you can also click it and zoom in or delete it.
