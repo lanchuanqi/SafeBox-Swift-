@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Album" representedClassName="Final.Model" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="album" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="album" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Notes" representedClassName="Final.NoteModel" syncable="YES">
+        <attribute name="notedetail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notename" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="notes" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Photo" representedClassName="Final.AllPhotos" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="photos" inverseEntity="Album" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Final.UserInfo" syncable="YES">
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Album" inverseName="user" inverseEntity="Album" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notes" inverseName="user" inverseEntity="Notes" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Album" positionX="-63" positionY="0" width="128" height="90"/>
+        <element name="Notes" positionX="-36" positionY="36" width="128" height="30"/>
+        <element name="Photo" positionX="-63" positionY="9" width="128" height="75"/>
+        <element name="Users" positionX="-63" positionY="-18" width="128" height="105"/>
+    </elements>
+</model>
